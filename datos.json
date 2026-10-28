@@ -1,0 +1,49 @@
+{
+  "usuarios" : {
+    "jonathan": {
+      "rol" : "owner",
+      "gender": "male",
+      "password": 55235
+    },
+    "yuki": {
+      "rol": "manager",
+      "gender": "female",
+      "password": 27467
+    },
+    "mindy": {
+      "rol": "empleado",
+      "gender": "female",
+      "password": 97051
+    }
+  },
+  "rolPermission": {
+    "owner":{
+      "verEmpleados": true,
+      "verIngresos/Costos": true,
+      "verProvedores": true,
+      "cancelarMovimientos":true,
+      "verHistoral_Movimientos":true,
+      "contratar/despedir":true,
+      "pedirAyuda":false
+    },
+    "manager": {
+      "verEmpleados":true,
+      "verIngresos/Costos":true,
+      "verProvedores":true,
+      "cancelarMovimientos":true,
+      "verHistoral_Movimientos":true,
+      "contratar/despedir":true,
+      "pedirAyuda": false
+    },
+    "empleado": {
+      "verEmpleados":false,
+      "verIngresos/Costos":false,
+      "verProvedores":false,
+      "cancelarMovimientos":false,
+      "verHistoral_Movimientos":true,
+      "contratar/despedir":false,
+      "cobrar": true,
+      "pedirAyuda": true
+    }
+  }
+}
