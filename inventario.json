@@ -1,0 +1,86 @@
+{
+  "usuarios" : {
+    "jonathan": {
+      "rol" : "owner",
+      "gender": "male",
+      "password": 55235
+    },
+    "yuki": {
+      "rol": "manager",
+      "gender": "female",
+      "password": 27467
+    },
+    "mindy": {
+      "rol": "empleado",
+      "gender": "female",
+      "password": 97051
+    }
+  },
+  "rolPermission": {
+    "owner":{
+      "verEmpleados": true,
+      "verIngresos/Costos": true,
+      "verProvedores": true,
+      "cancelarMovimientos":true,
+      "verHistoral_Movimientos":true,
+      "contratar/despedir":true,
+      "pedirAyuda":false
+    },
+    "manager": {
+      "verEmpleados":true,
+      "verIngresos/Costos":true,
+      "verProvedores":true,
+      "cancelarMovimientos":true,
+      "verHistoral_Movimientos":true,
+      "contratar/despedir":true,
+      "pedirAyuda": false
+    },
+    "empleado": {
+      "verEmpleados":false,
+      "verIngresos/Costos":false,
+      "verProvedores":false,
+      "cancelarMovimientos":false,
+      "verHistoral_Movimientos":true,
+      "contratar/despedir":false,
+      "cobrar": true,
+      "pedirAyuda": true
+    }
+  },
+  "provedores" : {
+    "pepsico" : {
+      "refrescos": ["7UP","mirinda","manzanita","pepsi"],
+      "bebidas": ["gatorade","mountain","lipton"],
+      "frituras": ["sabritas","doritos","cheetos","ruffles","tostitos","fritos","rancheritos","churrumais","paquetaxos","crujitos","sabritones","mafer","karate"]
+    },
+    "cocaCola": {
+      "refrescos": ["cocaCola","fanta","sprite","fresca","sidral"],
+      "bebidas": ["ciel","powerade","monster","fuzeTea","topoChico","santaClara","vitaminWater","flashLyte"],
+      "jugos": ["delValle","adeS"]
+    },
+    "leche": {
+      "marcas": ["selloRojo","lala","alpura"]
+    },
+    "tortillas": {
+      "maiz": ["timo","maseca","tortiricas","mision"],
+      "harina": ["mission","tiaRosa","exquisitas","tortiricas"]
+    },
+    "licores":{
+      "cervezas": ["corona","victoria","indio","bohemia","tecate"],
+      "cocteles": ["bacardi","topoChico","newMix"]
+    },
+    "azucar": {
+      "precio-kilo": 28
+    },
+    "arroz":{
+      "precio-kilo": 30
+    },
+    "nuez": {
+      "precio-100g": 10
+    },
+    "cacahuate": {
+      "precio-salado-100g": 25,
+      "precio-cascara-100g": 34,
+      "precio-japones-100g": 28
+    }
+  }
+}
