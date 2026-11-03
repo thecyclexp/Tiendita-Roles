@@ -5,17 +5,20 @@ datos = {
     "jonathan": {
       "rol" : "dueño",
       "gender": "male",
-      "password": 55235
+      "password": 55235,
+      "salario": 4300
     },
     "yuki": {
       "rol": "gerente",
       "gender": "female",
-      "password": 27467
+      "password": 27467,
+      "salario": 320
     },
     "mindy": {
       "rol": "empleado",
       "gender": "female",
-      "password": 97051
+      "password": 97051,
+      "salario": 32
     }
   },
   "rolPermission": {
@@ -104,21 +107,12 @@ nombre = input("Ingresa tu nombre: ").strip().lower()
 if nombre in datos["usuarios"]:
   print("verificando usuario")
   time.sleep(1)
-  rol1 = datos["usuarios"][nombre]["rol"]
+  rol = datos["usuarios"][nombre]["rol"]
   print("Usuario encontrado")
   print("------------------------------------------------------------------------------------------------------------------------")
 else:
   print("este usuario no existe")
   print("------------------------------------------------------------------------------------------------------------------------")
-
-if rol1 in datos["usuarios"][nombre]["rol"]:
-  time.sleep(1)
-  print("Rol encontrado")
-  print("------------------------------------------------------------------------------------------------------------------------")
-else:
-  print("rol no compatible")
-  print("------------------------------------------------------------------------------------------------------------------------")
-
 
 password=int(input("Ingrese su contraseña: "))
 
@@ -132,12 +126,50 @@ else:
   print("acceso denegado")
   print("------------------------------------------------------------------------------------------------------------------------")
 
-if rol1 == "dueño" and password == datos["usuarios"][nombre]["password"]:
+if rol == "dueño" and password == datos["usuarios"][nombre]["password"]:
   while True:
     print("Binevenido",nombre)
-    print("1.-Ver ingresos\n2.- Ver salarios\n3.- Ver empleados\n4.- Ver Provedores\n5.- Cancelar Movimientos\n6.- Contratar/Despedir")
+    print("1.-Ver ingresos\n2.- Ver salarios\n3.- Ver empleados\n4.- Ver Provedores\n5.- Cancelar Movimientos\n6.- Contratar/Despedir\n7.- Salir")
     op = int(input("Eliga una opcion: "))
-elif rol1 == "gerente" and password == datos["usuarios"][nombre]["password"]:
+
+    if op == 1:
+      while True:
+        print("a.- Ver ingresos totales\nb.- ingresos mensuales\nc.- Ver Egresos")
+
+        opa = srt(input("Eliga la opcion a realizar: "))
+
+        if opa == "a":
+          print("Hola mundo")
+          break
+    elif op == 2:
+      while True:
+        print("----Lista de Empleados / Salarios----")
+        for name, info in datos["usuarios"].items():
+          print(f"Empleado: {name.capitalize()} | Salario: ${info['salario']}")
+          print("---------------------------------------------------------------------------------------------------------------------")
+        exit = str(input("Desea seguir aqui s/n: "))
+
+        if exit != "s":
+          break
+    elif op == 3:
+      for name, info in datos["usuarios"].items():
+        print(f"Empleado: {name.capitalize()}\nRol: {info['rol']}\nGénero: {info['gender']}\nSalario: ${info['salario']}")
+        print("---------------------------------------------------------------------------------------------------------------------")
+        print("")
+    elif op == 4:
+      pass
+    elif op == 5:
+      pass
+    elif op == 6:
+      pass
+    elif op == 7:
+      for i in range(5,0,-1):
+        time.sleep(1)
+        print(f"Cerrando el sistema en {i}")
+      break
+    else:
+      print("Opcion no disponible")
+elif rol == "gerente" and password == datos["usuarios"][nombre]["password"]:
   print("MENU GERENTE")
-elif rol1 == "empleado" and password == datos["usuarios"][nombre]["password"]:
+elif rol == "empleado" and password == datos["usuarios"][nombre]["password"]:
   print("MENU EMPLEADO")
